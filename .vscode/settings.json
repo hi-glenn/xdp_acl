@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "bpf_helpers.h": "c",
+        "if_packet.h": "c",
+        "types.h": "c",
+        "bpf.h": "c",
+        "bpf_helper_defs.h": "c",
+        "if_ether.h": "c",
+        "bpf_endian.h": "c",
+        "udp.h": "c",
+        "in.h": "c",
+        "ip.h": "c",
+        "byteorder.h": "c",
+        "little_endian.h": "c",
+        "swab.h": "c",
+        "bitsperlong.h": "c",
+        "tcp.h": "c",
+        "bpf_common.h": "c",
+        "api.h": "c",
+        "icmp.h": "c",
+        "stddef.h": "c"
+    }
+}

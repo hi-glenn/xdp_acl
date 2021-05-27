@@ -1,0 +1,83 @@
+[
+    {
+        "priority": 300,
+        "strategy": 2,
+        "protos": 4,
+        "create_time": 1622033756947,
+        "addr_src_arr": [
+            {
+                "cidr_user": "172.20.6.7/32",
+                "cidr_standard": "172.20.6.7/32"
+            }
+        ],
+        "port_src_arr": [],
+        "addr_dst_arr": [
+            {
+                "cidr_user": "172.20.6.6/32",
+                "cidr_standard": "172.20.6.6/32"
+            }
+        ],
+        "port_dst_arr": []
+    },
+    {
+        "priority": 200,
+        "strategy": 2,
+        "protos": 2,
+        "create_time": 1622033631970,
+        "addr_src_arr": [
+            {
+                "cidr_user": "172.20.6.7/32",
+                "cidr_standard": "172.20.6.7/32"
+            }
+        ],
+        "port_src_arr": [],
+        "addr_dst_arr": [
+            {
+                "cidr_user": "172.20.6.3/32",
+                "cidr_standard": "172.20.6.3/32"
+            }
+        ],
+        "port_dst_arr": []
+    },
+    {
+        "priority": 100,
+        "strategy": 2,
+        "protos": 1,
+        "create_time": 1622033574894,
+        "addr_src_arr": [
+            {
+                "cidr_user": "172.20.6.7/32",
+                "cidr_standard": "172.20.6.7/32"
+            }
+        ],
+        "port_src_arr": [],
+        "addr_dst_arr": [
+            {
+                "cidr_user": "172.20.6.3/32",
+                "cidr_standard": "172.20.6.3/32"
+            }
+        ],
+        "port_dst_arr": []
+    },
+    {
+        "priority": 10239,
+        "strategy": 2,
+        "protos": 7,
+        "create_time": 1622032948261,
+        "addr_src_arr": [
+            {
+                "cidr_user": "0.0.0.0/0",
+                "cidr_standard": "0.0.0.0/0"
+            }
+        ],
+        "port_src_arr": [],
+        "addr_dst_arr": [
+            {
+                "cidr_user": "0.0.0.0/0",
+                "cidr_standard": "0.0.0.0/0"
+            }
+        ],
+        "port_dst_arr": [],
+        "can_not_del": 1
+    }
+]
