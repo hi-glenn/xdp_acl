@@ -11,7 +11,7 @@ Performance comparison test of dropping 64 byte syn packet
 
 #### Get Started
 
-Compile or download from release tab
+Download directly from release tab or compile by yourself.
 ```
 # Compile
 $ make
