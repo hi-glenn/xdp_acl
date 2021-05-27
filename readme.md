@@ -19,7 +19,7 @@ $ make
 # Get help
 ./xdp_acl -h
 
-# Start (Inner web server will default listen on 0.0.0.0:9090)
+# Start (Inner web server will default listen on 0.0.0.0:9090).
 ./xdp_acl -D eth1 -S
 ```
 
