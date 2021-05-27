@@ -23,4 +23,7 @@ $ make
 ./xdp_acl -D eth1 -S
 ```
 
+#### Web console
+
+![alt web console](./docs/console.png "web console")
 
