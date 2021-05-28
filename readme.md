@@ -4,14 +4,18 @@
 Performance comparison test of dropping 64 byte syn packet
 ![alt benchmarks](./docs/pk.png "iptables vs xdp")
 
-#### Environment
-* [Build development environment basied on VMs](./playground) (Recommended)
-* [Build development environment basied on host](./docs/development_dependencies.md)
+#### Notice
+* Linux kernel required: v5.4 or later
 
+#### Environment
+* [Build development environment basied on VMs](./docs/environment/build_on_VMs) (Recommended)
+* [Build development environment basied on docker](./docs/environment/build_on_docker)
+* [Build development environment basied on host](./docs/environment/build_on_host)
 
 #### Get Started
 
 Download directly from release tab or compile by yourself.
+
 ```
 # Compile
 $ make
