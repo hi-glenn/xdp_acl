@@ -10,8 +10,8 @@ Performance comparison test of dropping 64 byte syn packet
 
 #### Environment
 * [Build development environment basied on VMs](./docs/environment/build_on_VMs) (Recommended)
-* [Build development environment basied on docker](./docs/environment/build_on_docker)
-* [Build development environment basied on host](./docs/environment/build_on_host)
+* [Build development environment basied on Docker image](./docs/environment/build_on_docker)
+* [Build development environment basied on Host](./docs/environment/build_on_host)
 
 #### Get Started
 
