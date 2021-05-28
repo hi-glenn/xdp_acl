@@ -1,0 +1,20 @@
+FROM fedora:33
+
+LABEL author = "glenn" \
+      email = "promise_wg@qq.com"
+
+RUN dnf install clang llvm -y \
+    && dnf install elfutils-libelf-devel libpcap-devel perf -y \
+    && dnf install kernel-headers -y \
+    && dnf install bpftool -y \
+    && dnf install golang -y \
+    && dnf clean all -y
+
+ENV GOPROXY https://goproxy.cn
+ENV GOPATH /workspace/vendor_tmp
+ENV PATH $GOPATH/bin:$PATH
+ENV GO111MODULE on
+
+WORKDIR /workspace
+
+CMD ["/bin/bash"]

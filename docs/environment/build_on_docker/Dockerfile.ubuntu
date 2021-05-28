@@ -1,0 +1,21 @@
+FROM ubuntu:20.04
+
+LABEL author = "glenn" \
+      email = "promise_wg@qq.com"
+
+RUN apt update \
+    && apt install -y software-properties-common \
+    && add-apt-repository ppa:longsleep/golang-backports -y \
+    && apt update \
+    && apt install golang-go -y \
+    && apt install clang llvm libelf-dev libpcap-dev gcc-multilib build-essential -y \
+    && apt clean all
+
+ENV GOPROXY https://goproxy.cn
+ENV GOPATH /workspace/vendor_tmp
+ENV PATH $GOPATH/bin:$PATH
+ENV GO111MODULE on
+
+WORKDIR /workspace
+
+CMD ["/bin/bash"]
