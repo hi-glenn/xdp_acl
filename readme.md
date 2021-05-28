@@ -6,6 +6,7 @@ Performance comparison test of dropping 64 byte syn packet
 
 #### Notice
 * Linux kernel required: v5.4 or later
+* [How to upgrade kernel quickly ?](./docs/environment/upgrade_kernel.md)
 
 #### Environment
 * [Build development environment basied on VMs](./docs/environment/build_on_VMs) (Recommended)
