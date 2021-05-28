@@ -22,10 +22,10 @@ Download directly from release tab or compile by yourself.
 $ make
 
 # Get help
-./xdp_acl -h
+$ ./xdp_acl -h
 
 # Start (Inner web server will default listen on 0.0.0.0:9090).
-./xdp_acl -D eth1 -S
+$ ./xdp_acl -D eth1 -S
 ```
 
 #### Web console
