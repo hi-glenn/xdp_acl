@@ -8,6 +8,9 @@ Performance comparison test of dropping 64 byte syn packet
 * Linux kernel required: v5.4 or later
 * [How to upgrade kernel quickly ?](./docs/environment/upgrade_kernel.md)
 
+#### Docs
+* [Inner web server RESTful API](./docs/restful-api.md)
+
 #### Environment
 * [Build development environment basied on VMs](./docs/environment/build_on_VMs) (Recommended)
 * [Build development environment basied on Docker image](./docs/environment/build_on_docker)
