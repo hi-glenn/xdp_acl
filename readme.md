@@ -5,7 +5,7 @@ Performance comparison test of dropping 64 byte syn packet
 ![alt benchmarks](./docs/pk.png "iptables vs xdp")
 
 #### Notice
-* Linux kernel required: v5.4 or later
+* Linux kernel required: v4.15 or later
 * [How to upgrade kernel quickly ?](./docs/environment/upgrade_kernel.md)
 
 #### Docs
