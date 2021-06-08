@@ -32,7 +32,7 @@ const colorName = "\033[1;34mX\033[1;0m\033[1;31mD\033[0m\033[1;33mP\033[0m \033
 
 // 定义命令行参数对应的变量，变量都是指针类型
 var rootCmd = &cobra.Command{
-	Version: "0.0.9",
+	Version: "0.0.10",
 	Use:     "./xdp_acl -D netDevName[,netDevName...]",
 	Example: "./xdp_acl -D eth1\n./xdp_acl -D eth1,eth2\n./xdp_acl -D eth1 -S\n./xdp_acl -D eth1 --last-rule-fixed=false",
 	Short:   colorName + " is a very high performance ACL",

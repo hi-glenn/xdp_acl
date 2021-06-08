@@ -474,336 +474,125 @@ static __always_inline void get_bitmap_array_for_icmp_v4(__u64 *rule_array[], __
 
 static __always_inline void get_hit_rules_optimize(__u64 *rule_array[], __u32 *rule_array_len_ptr, __u64 *rule_array_index_ptr, __u64 *hit_rules_ptr)
 {
-	switch (*rule_array_len_ptr)
+	if (5 == *rule_array_len_ptr)
 	{
-	case 1:
+		// 5
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+	}
+	else
 	{
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		// 3
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][*rule_array_index_ptr];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][*rule_array_index_ptr];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
 			return;
 		}
 
 		(*rule_array_index_ptr)++;
-		if (rule_array[0][*rule_array_index_ptr] > 0)
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
 		{
-			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
 			return;
 		}
-
-		return;
 	}
 
-	case 2:
-	{
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		return;
-	}
-	case 3:
-	{
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		return;
-	}
-	case 4:
-	{
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		return;
-	}
-	case 5:
-	{
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		(*rule_array_index_ptr)++;
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		if (*hit_rules_ptr > 0)
-		{
-			return;
-		}
-
-		return;
-	}
-
-	default:
-		return;
-	}
+	return;
 }
-
-// before optimization
-/*
-static __always_inline void get_hit_rules(__u64 *rule_array[], __u32 *rule_array_len_ptr, __u64 *rule_array_index_ptr, __u64 *hit_rules_ptr)
-{
-	switch (*rule_array_len_ptr)
-	{
-	case 1:
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]);
-		return;
-	case 2:
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
-		return;
-	case 3:
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
-		return;
-	case 4:
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
-		return;
-	case 5:
-		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
-		return;
-	default:
-		return;
-	}
-}
-*/
 
 static __always_inline int get_rule_action_v4(__u64 *rule_array[], __u32 *rule_array_len_ptr)
 {
@@ -811,7 +600,7 @@ static __always_inline int get_rule_action_v4(__u64 *rule_array[], __u32 *rule_a
 	/*
 	三种特殊情况:
 	  未匹配到规则:
-	    1 *rule_array_len == 0 => (bitmap[0] == 0); 返回 XDP_PASS
+	    1 *rule_array_len == 0 => (bitmap[0] == 0); 或者 *rule_array_len == 1 2 4 返回 XDP_PASS; 
 	    2 *rule_array_len != 0; 但 bitmap 按位与时，都为 0 => (bitmap[BITMAP_ARRAY_SIZE - 1] == 0); 返回 XDP_PASS
 
 	  匹配到规则:
@@ -821,12 +610,12 @@ static __always_inline int get_rule_action_v4(__u64 *rule_array[], __u32 *rule_a
 	struct rule_action_key key;
 	struct rule_action *value;
 
-	if (unlikely(0 == *rule_array_len_ptr))
+	if (unlikely(3 != *rule_array_len_ptr && 5 != *rule_array_len_ptr))
 	{
 		// 特殊情况 1
 
-		key.bitmap_ffs = 0;
-		key.bitmap_array_index = 0;
+		// key.bitmap_ffs = 0;
+		// key.bitmap_array_index = 0;
 
 #ifdef XDPACL_DEBUG
 		char msg3[] = "result => rule action: specified 1\n";
@@ -859,9 +648,6 @@ static __always_inline int get_rule_action_v4(__u64 *rule_array[], __u32 *rule_a
 	// 			break;
 	// 		}
 	// 	}
-
-	// char msg13[] = "result => mark2-mark2-mark2-mark2\n";
-	// bpf_trace_printk(msg13, sizeof(msg13));
 
 	__u64 rule_array_outer_index ____cacheline_aligned = 0;
 #pragma unroll
@@ -1015,3 +801,342 @@ int xdp_acl_func(struct xdp_md *ctx)
 }
 
 char _license[] SEC("license") = "GPL";
+
+
+
+
+// with optimization max len 5
+/*
+static __always_inline void get_hit_rules_optimize_max_len_5(__u64 *rule_array[], __u32 *rule_array_len_ptr, __u64 *rule_array_index_ptr, __u64 *hit_rules_ptr)
+{
+	switch (*rule_array_len_ptr)
+	{
+	case 1:
+	{
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][*rule_array_index_ptr];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][*rule_array_index_ptr];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		if (rule_array[0][*rule_array_index_ptr] > 0)
+		{
+			*hit_rules_ptr = rule_array[0][(*rule_array_index_ptr)];
+			return;
+		}
+
+		return;
+	}
+
+	case 2:
+	{
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		return;
+	}
+	case 3:
+	{
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		return;
+	}
+	case 4:
+	{
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		return;
+	}
+	case 5:
+	{
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		(*rule_array_index_ptr)++;
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		if (*hit_rules_ptr > 0)
+		{
+			return;
+		}
+
+		return;
+	}
+
+	default:
+		return;
+	}
+}
+*/
+
+// before optimization
+/*
+static __always_inline void get_hit_rules(__u64 *rule_array[], __u32 *rule_array_len_ptr, __u64 *rule_array_index_ptr, __u64 *hit_rules_ptr)
+{
+	switch (*rule_array_len_ptr)
+	{
+	case 1:
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]);
+		return;
+	case 2:
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]);
+		return;
+	case 3:
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]);
+		return;
+	case 4:
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]);
+		return;
+	case 5:
+		*hit_rules_ptr = (rule_array[0][*rule_array_index_ptr]) & (rule_array[1][*rule_array_index_ptr]) & (rule_array[2][*rule_array_index_ptr]) & (rule_array[3][*rule_array_index_ptr]) & (rule_array[4][*rule_array_index_ptr]);
+		return;
+	default:
+		return;
+	}
+}
+*/
