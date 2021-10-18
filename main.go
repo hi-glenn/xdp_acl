@@ -91,7 +91,7 @@ func main() {
 
 	go webInit(&opt)
 
-	zlog.Infof("🍉 name: %s. Cost=%+v.", "app", time.Since(b))
+	zlog.Infof("🍉🍉 name: %s. Cost=%+v.", "app", time.Since(b))
 
 	holdApp()
 }
