@@ -53,11 +53,10 @@ about BITMAP_ARRAY_SIZE
 #define unlikely(x) __builtin_expect(!!(x), 0)
 
 // FIXED value
-#define ETH_HDR_SIZE 14
-#define IP_HDR_SIZE 20
-#define TCP_HDR_SIZE 20
-#define UDP_HDR_SIZE 8
-
+// #define ETH_HDR_SIZE 14
+// #define IP_HDR_SIZE 20
+// #define TCP_HDR_SIZE 20
+// #define UDP_HDR_SIZE 8
 
 
 // 支持的最多规则条数, 必须是 64 的整数倍; 比如: 64 * 16 == 1024
@@ -153,21 +152,13 @@ static __always_inline int parse_ethhdr(struct hdr_cursor *nh, void *data_end,
 {
 	*ethhdr_l2 = nh->pos;
 
-#ifdef XDPACL_DEBUG
-	char msg1[] = "sizeof(struct ethhdr): %u; ETH_HDR_SIZE: %u; isequal: %u\n";
-	bpf_trace_printk(msg1, sizeof(msg1), sizeof(struct ethhdr), ETH_HDR_SIZE, sizeof(struct ethhdr) == ETH_HDR_SIZE ? 1 : 0);
-
-	char msg2[] = "differ: %u;\n";
-	bpf_trace_printk(msg2, sizeof(msg2), ((void *)(*ethhdr_l2 + 1) - (void *)(*ethhdr_l2)));
-#endif
-
 	//  Byte-count bounds check; check if current pointer + size of header is after data_end.
 	if ((void *)((*ethhdr_l2) + 1) > data_end)
 	{
 		return -1;
 	}
 
-	nh->pos += ETH_HDR_SIZE;
+	nh->pos += sizeof(struct ethhdr);
 
 	return (*ethhdr_l2)->h_proto; // network-byte-order
 }
@@ -178,14 +169,6 @@ static __always_inline int parse_iphdr(struct hdr_cursor *nh,
 {
 	*iphdr_l3 = nh->pos;
 
-#ifdef XDPACL_DEBUG
-	char msg1[] = "sizeof(struct iphdr): %u; IP_HDR_SIZE: %u; isequal: %u\n";
-	bpf_trace_printk(msg1, sizeof(msg1), sizeof(struct iphdr), IP_HDR_SIZE, sizeof(struct iphdr) == IP_HDR_SIZE ? 1 : 0);
-
-	char msg2[] = "differ: %u;\n";
-	bpf_trace_printk(msg2, sizeof(msg2), ((void *)((*iphdr_l3) + 1) - (void *)(*iphdr_l3)));
-#endif
-
 	if ((void *)((*iphdr_l3) + 1) > data_end)
 	{
 		return -1;
@@ -194,7 +177,7 @@ static __always_inline int parse_iphdr(struct hdr_cursor *nh,
 	int hdrsize = ((*iphdr_l3)->ihl) << 2; // * 4
 
 	// Sanity check packet field is valid
-	if (hdrsize < IP_HDR_SIZE)
+	if (hdrsize < sizeof(struct iphdr))
 	{
 		return -1;
 	}
@@ -216,14 +199,6 @@ static __always_inline int parse_tcphdr(struct hdr_cursor *nh,
 {
 	*tcphdr_l4 = nh->pos;
 
-#ifdef XDPACL_DEBUG
-	char msg1[] = "sizeof(struct tcphdr): %u; TCP_HDR_SIZE: %u; isequal: %u\n";
-	bpf_trace_printk(msg1, sizeof(msg1), sizeof(struct tcphdr), TCP_HDR_SIZE, sizeof(struct tcphdr) == TCP_HDR_SIZE ? 1 : 0);
-
-	char msg2[] = "differ: %u;\n";
-	bpf_trace_printk(msg2, sizeof(msg2), ((void *)((*tcphdr_l4) + 1) - (void *)(*tcphdr_l4)));
-#endif
-
 	if ((void *)((*tcphdr_l4) + 1) > data_end)
 	{
 		return -1;
@@ -231,7 +206,7 @@ static __always_inline int parse_tcphdr(struct hdr_cursor *nh,
 
 	int len = ((*tcphdr_l4)->doff) << 2; // * 4
 	// Sanity check packet field is valid
-	if (len < TCP_HDR_SIZE)
+	if (len < sizeof(struct tcphdr))
 	{
 		return -1;
 	}
@@ -253,22 +228,14 @@ static __always_inline int parse_udphdr(struct hdr_cursor *nh,
 {
 	*udphdr_l4 = nh->pos;
 
-#ifdef XDPACL_DEBUG
-	char msg1[] = "sizeof(struct udphdr): %u; UDP_HDR_SIZE: %u; isequal: %u\n";
-	bpf_trace_printk(msg1, sizeof(msg1), sizeof(struct udphdr), UDP_HDR_SIZE, sizeof(struct udphdr) == UDP_HDR_SIZE ? 1 : 0);
-
-	char msg2[] = "differ: %u;\n";
-	bpf_trace_printk(msg2, sizeof(msg2), ((void *)((*udphdr_l4) + 1) - (void *)(*udphdr_l4)));
-#endif
-
 	if ((void *)((*udphdr_l4) + 1) > data_end)
 	{
 		return -1;
 	}
 
-	nh->pos += UDP_HDR_SIZE;
+	nh->pos += sizeof(struct udphdr);
 
-	int len = bpf_ntohs((*udphdr_l4)->len) - UDP_HDR_SIZE;
+	int len = bpf_ntohs((*udphdr_l4)->len) - sizeof(struct udphdr);
 	if (len < 0)
 	{
 		return -1;
