@@ -20,7 +20,7 @@ func keepReceive(wgPtr *sync.WaitGroup, udpConn *net.UDPConn) {
 			fmt.Println("接收数据失败，err:", err)
 			continue
 		}
-		fmt.Printf("recv: %v\n", string(data[:n]))
+		fmt.Printf("len: %d; recv: %v\n", n, string(data[:n]))
 	}
 }
 
